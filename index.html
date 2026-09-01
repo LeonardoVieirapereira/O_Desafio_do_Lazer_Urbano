@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalho Acadêmico: O Desafio do Lazer Urbano</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #16a085;
+      --accent-color: #e67e22;
+      --bg-color: #f4f6f7;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --border-color: #e0e0e0;
+    }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--secondary-color);
+    }
+
+    main {
+      background-color: var(--card-bg);
+      padding: 40px;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: var(--secondary-color);
+      margin-top: 20px;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background-color: #f8f9fa;
+      border-left: 4px solid var(--secondary-color);
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .quote-box {
+      background-color: #fcf8e3;
+      border-left: 4px solid var(--accent-color);
+      padding: 15px;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table, th, td {
+      border: 1px solid var(--border-color);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media print {
+      body {
+        background-color: #fff;
+      }
+      .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: transparent;
+        color: #000;
+        border-bottom: 2px solid #000;
+      }
+      main {
+        box-shadow: none;
+        padding: 0;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>O Desafio do Lazer Urbano</h1>
+    <p>Projeto de Concepção e Prototipagem de Solução Digital</p>
+    <p><strong>Disciplina:</strong> Inovação & Tecnologia | <strong>Entrega Final de Unidade</strong></p>
+  </header>
+
+  <nav>
+    <a href="#problema">1. O Problema</a>
+    <a href="#persona">2. Persona</a>
+    <a href="#solucao">3. A Solução</a>
+    <a href="#prototipo">4. Protótipo</a>
+    <a href="#pitch">5. Pitch de Apresentação</a>
+  </nav>
+
+  <main>
+    <section id="problema">
+      <h2>1. Definição e Aprofundamento do Problema</h2>
+      <p>A partir de entrevistas realizadas com jovens, estudantes e familiares, identificou-se uma grande insatisfação quanto ao acesso a opções culturais e de entretenimento público nas cidades. O problema central foi estruturado da seguinte forma:</p>
+      
+      <div class="card">
+        <strong>Declaração do Problema Central:</strong><br>
+        Jovens e estudantes perdem tempo valioso navegando por redes sociais dispersas, blogs e sites institucionais fragmentados para encontrar opções de lazer acessíveis, resultando na desistência de sair de casa e no isolamento social.
+      </div>
+
+      <h3>Priorização dos Impactos</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Critério</th>
+            <th>Nota (1-5)</th>
+            <th>Explicação do Diagnóstico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frequência</td>
+            <td>5</td>
+            <td>Acontece todos os fins de semana e feriados para a maioria dos jovens urbanos.</td>
+          </tr>
+          <tr>
+            <td>Impacto</td>
+            <td>4</td>
+            <td>Gera frustração, sedentarismo e limita a vivência cultural e a socialização.</td>
+          </tr>
+          <tr>
+            <td>Clareza</td>
+            <td>5</td>
+            <td>O problema é perfeitamente delimitado: falta de centralização e informação acessível.</td>
+          </tr>
+          <tr>
+            <td>Potencial para Protótipo</td>
+            <td>5</td>
+            <td>Ideal para um agregador geolocalizado digital estilo aplicação mobile.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Análise de Consequências e Tentativas Anteriores</h3>
+      <ul>
+        <li><strong>Em que momentos ocorre?</strong> Principalmente entre quinta-feira e domingo, quando o tempo livre está disponível, mas não há planejamento prévio.</li>
+        <li><strong>Consequências diretas:</strong> Sensação de tédio, gasto excessivo com lazer privado comercial (shoppings), perda de pertencimento à cidade.</li>
+        <li><strong>O que já foi tentado?</strong> Grupos de redes sociais (mensagens dispersas e sem filtro) e portais da prefeitura (interfaces datadas, pouco intuitivas e desatualizadas).</li>
+      </ul>
+    </section>
+
+    <section id="persona">
+      <h2>2. Persona do Projeto</h2>
+      <p>Para orientar o desenvolvimento da solução conceitual, construímos uma persona representativa com base nos dados qualitativos levantados.</p>
+
+      <div class="card">
+        <h3>Camila Mendes, 19 anos</h3>
+        <p><strong>Perfil:</strong> Estudante universitária de Geografia e estagiária.</p>
+        <p><strong>Rotina:</strong> Passa a semana entre a faculdade e o transporte público. Nos fins de semana, busca relaxar e encontrar amigos sem gastar muito, pois o orçamento do estágio é limitado.</p>
+        <p><strong>Dores e Frustrações:</strong> Fica horas procurando "o que fazer hoje" no Instagram, descobre eventos interessantes apenas depois que eles já aconteceram ou descobre em cima da hora que a entrada de um parque/exposição era gratuita apenas em determinado horário.</p>
+        
+        <div class="quote-box">
+          "Eu quero aproveitar a cidade e ver meus amigos no fim de semana, mas passo duas horas procurando um lugar legal e barato e acabo ficando no quarto rolando o feed."
+        </div>
+      </div>
+    </section>
+
+    <section id="solucao">
+      <h2>3. Ideação e Proposta de Solução</h2>
+      
+      <h3>Nome da Ideia: UrbanVibe (O Hub do Lazer Urbano)</h3>
+      <p><strong>Descrição Geral:</strong> Um aplicativo mobile agregador e mapa interativo que reúne atrações culturais, parques, feiras, shows gratuitos e espaços de convivência em um único painel centralizado, filtrado por orçamento, localização e preferência.</p>
+
+      <h3>Por que resolve o problema da persona?</h3>
+      <p>Em vez de exigir que a persona navegue por dezenas de perfis em redes sociais ou sites desatualizados, o <em>UrbanVibe</em> utiliza a geolocalização para indicar atividades gratuitas ou de baixo custo que estão acontecendo em tempo real em um raio próximo ao usuário.</p>
+
+      <h3>O que atende e O que não atende (Escopo)</h3>
+      <ul>
+        <li><strong>Atende:</strong> Curadoria de eventos públicos/gratuitos, filtros por distância e preço, mural de avaliações rápidas feitas por outros jovens.</li>
+        <li><strong>Não Atende:</strong> Compra/venda de ingressos de grandes shows comerciais ou sistema de transporte integrado.</li>
+      </ul>
+    </section>
+
+    <section id="prototipo">
+      <h2>4. Estrutura do Protótipo Visual (Wireframe)</h2>
+      <p>O protótipo conceitual foi modelado no Figma com foco em clareza, usabilidade e navegação por cartões organizados.</p>
+
+      <div class="card">
+        <h3>Estrutura da Tela Inicial (Mural da Cidade)</h3>
+        <ol>
+          <li><strong>Cabeçalho de Navegação:</strong> Barra de busca por raio de distância (ex: "Até 5km de mim") e seletores de tags rápidas (<em>Gratuito, Ao Ar Livre, Feiras, Exposição</em>).</li>
+          <li><strong>Mural de Cartões (Feed Principal):</strong>
+            <ul>
+              <li><strong>Cartão 1 (Evento):</strong> Feira Cultural do Parque Central | <em>Tag: Grátis • Hoje às 15h</em></li>
+              <li><strong>Cartão 2 (Espaço Público):</strong> Mirante da Pista de Skate | <em>Tag: Ponto de Encontro • Aberto 24h</em></li>
+              <li><strong>Cartão 3 (Cultura):</strong> Mostra de Cinema ao Ar Livre | <em>Tag: R$ 5,00 • Sábado às 19h</em></li>
+            </ul>
+          </li>
+          <li><strong>Barra Inferior de Atalhos:</strong> Ícones para <em>Mapa Interativo, Meus Salvos, Adicionar Dica de Lazer, Perfil da Persona</em>.</li>
+        </ol>
+      </div>
+      
+      <p><strong>Link de Acesso ao Protótipo Figma:</strong> <a href="#" target="_blank">https://figma.com/file/exemplo-lazer-urbano-prototipo</a></p>
+      <p><strong>Link da Apresentação Canva:</strong> <a href="#" target="_blank">https://canva.com/design/exemplo-apresentacao-lazer-urbano</a></p>
+    </section>
+
+    <section id="pitch">
+      <h2>5. Roteiro do Pitch de Apresentação (2 Minutos)</h2>
+
+      <div class="card">
+        <p><strong>[Início - 0:00 a 0:30] O Gancho e o Problema</strong><br>
+        "Você já passou dezenas de minutos no fim de semana rolando a tela do celular tentando achar um lugar legal e barato para ir com seus amigos e acabou desistindo e ficando em casa? Essa é a realidade da Camila e de milhares de jovens que não encontram informações centralizadas sobre o lazer público na nossa cidade."</p>
+
+        <p><strong>[Meio - 0:30 a 1:15] A Solução e o Protótipo</strong><br>
+        "Para resolver isso, criamos o <strong>UrbanVibe</strong>: um hub digital que mapeia e organiza todas as opções de lazer acessíveis em um só lugar. No nosso aplicativo, basta abrir a tela inicial para ver o que está acontecendo perto de você agora — de feiras de rua a shows gratuitos nos parques. Tudo limpo, simples e categorizado."</p>
+
+        <p><strong>[Fim - 1:15 a 2:00] O Impacto e Encerramento</strong><br>
+        "O UrbanVibe devolve a cidade para as pessoas, incentivando a ocupação dos espaços públicos e a convivência real. Acreditamos que o lazer não precisa ser caro para ser inesquecível. Muito obrigado!"</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Trabalho Desenvolvido com o Auxílio do Gemini AI para Estruturação de Ideias | 2026</p>
+  </footer>
+</div>
+
+</body>
+</html>
+
+  
