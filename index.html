@@ -13,12 +13,12 @@
   <style>
     :root {
       --bg-dark: #0f172a;
-      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-bg: rgba(30, 41, 59, 0.75);
       --accent-teal: #2dd4bf;
       --accent-orange: #fb923c;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --border-glow: rgba(45, 212, 191, 0.2);
+      --border-glow: rgba(45, 212, 191, 0.25);
     }
 
     * {
@@ -31,7 +31,7 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-dark);
       color: var(--text-main);
-      overflow: hidden; /* Mantém o foco de slide na tela */
+      overflow: hidden;
       height: 100vh;
       width: 100vw;
     }
@@ -57,30 +57,29 @@
       background-position: center;
     }
 
-    /* Overlay escuro com filtro para destacar o texto */
+    /* Overlay escuro */
     .slide::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 30%, rgba(15, 23, 42, 0.75) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 25%, rgba(15, 23, 42, 0.8) 100%);
       z-index: 1;
     }
 
     .slide-content {
       position: relative;
       z-index: 2;
-      max-width: 1100px;
+      max-width: 1150px;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 35px;
       align-items: center;
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    /* Animação fluida quando o slide fica ativo */
     .slide.active .slide-content {
       opacity: 1;
       transform: translateY(0);
@@ -94,42 +93,42 @@
     }
 
     h1 {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 900;
       line-height: 1.1;
       background: linear-gradient(to right, #ffffff, var(--accent-teal));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: var(--accent-teal);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.5;
+      margin-bottom: 15px;
     }
 
     .badge {
       display: inline-block;
-      padding: 6px 14px;
+      padding: 5px 12px;
       background: rgba(45, 212, 191, 0.1);
       border: 1px solid var(--accent-teal);
       color: var(--accent-teal);
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
 
-    /* Visualização das Imagens nos Slides */
+    /* Imagens nos Slides */
     .image-card {
       position: relative;
       border-radius: 16px;
@@ -154,33 +153,80 @@
     .card-box {
       background: var(--card-bg);
       backdrop-filter: blur(10px);
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 12px;
     }
 
     .quote {
       border-left: 4px solid var(--accent-orange);
-      padding-left: 15px;
+      padding-left: 12px;
       font-style: italic;
       color: var(--text-main);
+    }
+
+    /* Grid de Integrantes */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .team-member {
+      background: rgba(45, 212, 191, 0.05);
+      border: 1px solid var(--border-glow);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .team-member::before {
+      content: '•';
+      color: var(--accent-teal);
+      font-size: 1.2rem;
     }
 
     /* Tabelas */
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
     th, td {
-      padding: 10px;
+      padding: 8px;
       text-align: left;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     th {
+      color: var(--accent-teal);
+    }
+
+    /* Listas Customizadas */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
       color: var(--accent-teal);
     }
 
@@ -240,17 +286,16 @@
       border-radius: 6px;
     }
 
-    /* Responsividade */
     @media (max-width: 900px) {
       .slide-content {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
       }
       .image-card img {
-        height: 200px;
+        height: 180px;
       }
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.6rem; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -258,55 +303,88 @@
 
   <div class="slider-container" id="slider">
 
-    <!-- SLIDE 1: CAPA -->
+    <!-- SLIDE 1: CAPA & EQUIPE -->
     <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
           <span class="badge">Projeto de Inovação & Tecnologia</span>
           <h1>O Desafio do Lazer Urbano</h1>
-          <p>Concepção, pesquisa e prototipagem de uma solução digital para reconectar os jovens aos espaços públicos da cidade.</p>
+          <p>Desenvolvimento do processo de pesquisa, análise com IA, prototipagem e pitch para um aplicativo de lazer público.</p>
         </div>
-        <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1517457210348-703079e57d4b?auto=format&fit=crop&w=800&q=80" alt="Jovens ocupando espaço urbano">
+        <div>
+          <div class="card-box">
+            <h3 style="color:var(--accent-teal); margin-bottom:12px; font-size:1rem;">Integrantes do Grupo</h3>
+            <div class="team-grid">
+              <div class="team-member">Leonardo</div>
+              <div class="team-member">Pietro</div>
+              <div class="team-member">Gabriel Henrique</div>
+              <div class="team-member">Mateus</div>
+              <div class="team-member">Kauan</div>
+              <div class="team-member">Daniel</div>
+              <div class="team-member">Guilherme</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 2: O PROBLEMA -->
+    <!-- SLIDE 2: METODOLOGIA E PROCESSO -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80');">
+      <div class="slide-content">
+        <div>
+          <span class="badge">Metodologia de Trabalho</span>
+          <h2>Como o Trabalho Foi Feito</h2>
+          <p>O projeto seguiu etapas estruturadas combinando pesquisa de campo, análise com Inteligência Artificial e design de produto:</p>
+          <ul>
+            <li><strong>Entrevistas Norteadoras:</strong> Aplicação de perguntas sobre rotina, tédio e dificuldades no lazer urbano.</li>
+            <li><strong>Aprofundamento com IA:</strong> Uso do Gemini para mapear dores, organizar demandas e gerar personas.</li>
+            <li><strong>Prototipagem no Figma:</strong> Criação visual de wireframes gerados e ajustados via comandos (prompts).</li>
+            <li><strong>Apresentação e Pitch:</strong> Estruturação no Canva e roteiro focado no problema e na solução.</li>
+          </ul>
+        </div>
+        <div class="image-card">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipe trabalhando juntas em projeto">
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: O PROBLEMA CENTRAL -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1477959858617-67f30ac4ce78?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
-          <span class="badge">01. Diagnóstico</span>
+          <span class="badge">01. Problema</span>
           <h2>A Frustração da Desconexão Urbana</h2>
           <div class="card-box">
-            <p style="color:#fff; margin:0;"><strong>Problema Central:</strong> Jovens e estudantes perdem tempo navegando por redes sociais e sites desatualizados para achar opções de lazer acessíveis, resultando em desistência e isolamento.</p>
+            <p style="color:#fff; margin:0;"><strong>Problema Definido:</strong> Jovens perdem tempo valioso navegando por redes sociais e portais desatualizados para encontrar lazer barato ou gratuito, resultando na desistência de sair e no isolamento.</p>
           </div>
-          <p>A falta de informação centralizada faz com que eventos culturais públicos e espaços de convivência fiquem vazios, enquanto os jovens ficam retidos em casa.</p>
+          <p>A falta de informação centralizada faz com que eventos culturais públicos e praças fiquem vazios enquanto os jovens continuam em casa.</p>
         </div>
         <div>
           <div class="card-box">
-            <h3 style="color:var(--accent-teal); margin-bottom:10px;">Critérios de Prioridade</h3>
+            <h3 style="color:var(--accent-teal); margin-bottom:10px; font-size:1rem;">Matriz de Priorização (IA)</h3>
             <table>
-              <tr><th>Critério</th><th>Nota</th><th>Análise</th></tr>
-              <tr><td>Frequência</td><td>5/5</td><td>Recorrente a cada fim de semana.</td></tr>
-              <tr><td>Impacto</td><td>4/5</td><td>Gera isolamento e sedentarismo.</td></tr>
-              <tr><td>Potencial App</td><td>5/5</td><td>Ideal para mapa geolocalizado.</td></tr>
+              <tr><th>Critério</th><th>Nota</th><th>Diagnóstico</th></tr>
+              <tr><td>Frequência</td><td>5/5</td><td>Ocorre todo fim de semana/feriado.</td></tr>
+              <tr><td>Impacto</td><td>4/5</td><td>Gera frustração e sedentarismo.</td></tr>
+              <tr><td>Clareza</td><td>5/5</td><td>Falta de canal de informação único.</td></tr>
+              <tr><td>Potencial App</td><td>5/5</td><td>Ideal para mapa e feed em tempo real.</td></tr>
             </table>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 3: PERSONA -->
+    <!-- SLIDE 4: PERSONA DO PROJETO -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
           <span class="badge">02. Persona</span>
           <h2>Camila Mendes, 19 anos</h2>
           <p><strong>Estudante universitária e estagiária.</strong></p>
-          <p>Passa a semana inteira na rotina de estudos e transporte. Nos fins de semana, busca relaxar e encontrar amigos sem estourar o orçamento limitado do estágio.</p>
+          <p><strong>Rotina:</strong> Rotina intensa de estudos e estágio. Quer aproveitar os fins de semana com os amigos, mas tem orçamento limitado.</p>
+          <p><strong>Dores Principais:</strong> Descobre feiras e shows gratuitos só depois que já aconteceram. Tem preguiça de procurar em vários perfis do Instagram.</p>
           <div class="quote">
-            "Passo duas horas procurando algo legal e barato na cidade e acabo desistindo e ficando no quarto rolando o feed."
+            "Eu quero sair e ver gente no fim de semana, mas passo horas procurando algo legal e barato e acabo ficando em casa rolando o feed."
           </div>
         </div>
         <div class="image-card">
@@ -315,66 +393,73 @@
       </div>
     </div>
 
-    <!-- SLIDE 4: A SOLUÇÃO -->
+    <!-- SLIDE 5: A SOLUÇÃO CONCEPTUAL -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
-          <span class="badge">03. Ideação</span>
-          <h2>UrbanVibe: O Hub de Lazer</h2>
-          <p>Um aplicativo agregador e mapa interativo que mapeia feiras, shows gratuitos, parques e exposições perto de você.</p>
+          <span class="badge">03. Solução</span>
+          <h2>UrbanVibe: O Hub do Lazer Urbano</h2>
+          <p>Um aplicativo mobile agregador que funciona como um mural de opções acessíveis na cidade em tempo real.</p>
           <div class="card-box">
-            <h3 style="color:var(--accent-teal); font-size:1rem;">Diferencial</h3>
-            <p style="margin:0; font-size:0.95rem;">Curadoria focada em eventos gratuitos ou de baixo custo em tempo real, organizados por raio de distância.</p>
+            <h3 style="color:var(--accent-teal); font-size:1rem; margin-bottom:5px;">O que o App faz:</h3>
+            <ul>
+              <li>Mapeamento por raio de distância (ex: até 5km).</li>
+              <li>Filtros por preço: "Gratuito", "Até R$ 10", "Entrada Livre".</li>
+              <li>Categorias rápidas: Feiras, Shows no Parque, Pistas de Skate, Exposições.</li>
+            </ul>
           </div>
         </div>
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Uso de mapa no aplicativo de celular">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Pessoa utilizando mapa no celular">
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 5: PROTÓTIPO -->
+    <!-- SLIDE 6: ESTRUTURA DO PROTÓTIPO (FIGMA) -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
-          <span class="badge">04. Prototipagem</span>
-          <h2>Interface no Figma</h2>
-          <p>Design guiado por cartões intuitivos para tomada de decisão rápida:</p>
-
+          <span class="badge">04. Protótipo</span>
+          <h2>Estrutura Visual da Interface</h2>
+          <p>Construída no Figma a partir de testes de facilidade de uso e feedbacks dos colegas:</p>
           <div class="card-box">
             <p style="margin:0; font-size:0.9rem; color:#fff;">
-              📍 <strong>Filtros Rápido:</strong> "Até 5km", "Gratuito", "Ao ar livre"<br><br>
-              🏷️ <strong>Mural da Cidade:</strong> Cards com data, horário e avaliações reais.<br><br>
-              🔗 <strong>Links:</strong> Protótipo no Figma & Slides no Canva disponíveis.
+              📌 <strong>Topo:</strong> Busca inteligente por raio e tags de interesse.<br><br>
+              🖼️ <strong>Mural da Cidade:</strong> Cartões visuais contendo foto do local, horário, tag de valor e avaliação da comunidade.<br><br>
+              🗺️ <strong>Integração:</strong> Botão de rota rápida para o Google Maps/GPS.
             </p>
           </div>
         </div>
         <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80" alt="Wireframe e design de interface no computador">
+          <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80" alt="Design de protótipo de aplicativo no computador">
         </div>
       </div>
     </div>
 
-    <!-- SLIDE 6: PITCH & ENCERRAMENTO -->
+    <!-- SLIDE 7: ROTEIRO DO PITCH & ENCERRAMENTO -->
     <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80');">
       <div class="slide-content">
         <div>
           <span class="badge">05. Pitch de 2 Minutos</span>
-          <h2>O Lazer não precisa ser caro para ser inesquecível</h2>
-          <p>O <strong>UrbanVibe</strong> devolve a cidade para os jovens, incentivando o uso de parques, praças e centros culturais públicos.</p>
-          <div class="card-box" style="border-left: 4px solid var(--accent-teal);">
-            <p style="color:#fff; margin:0;">"Obrigado! Vamos ocupar a cidade juntos?"</p>
+          <h2>Apresentação do Projeto</h2>
+          <div class="card-box">
+            <p style="margin:0 0 10px 0; font-size:0.85rem; color:#fff;"><strong>[Início]</strong> "Já passou o fim de semana inteiro em casa porque ficou horas procurando o que fazer e não achou nada barato?"</p>
+            <p style="margin:0 0 10px 0; font-size:0.85rem; color:#fff;"><strong>[Meio]</strong> "Com o UrbanVibe, você encontra tudo o que está acontecendo na cidade em um único lugar, filtrado pelo seu orçamento."</p>
+            <p style="margin:0; font-size:0.85rem; color:var(--accent-teal);"><strong>[Fim]</strong> "O lazer não precisa ser caro para ser inesquecível. Obrigado!"</p>
           </div>
         </div>
-        <div class="image-card">
-          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Apresentação do projeto para público">
+        <div>
+          <div class="card-box" style="text-align: center;">
+            <h3 style="color:var(--accent-teal); margin-bottom:10px;">Links e Documentação</h3>
+            <p style="font-size:0.9rem;">Toda a documentação, pesquisas e links do Figma, Canva e Google Docs estão organizados no portfólio final da unidade.</p>
+          </div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Elementos de Controle e Navegação -->
+  <!-- Controles de Navegação -->
   <div class="dots" id="dotsContainer"></div>
 
   <div class="controls">
@@ -391,7 +476,6 @@
 
     let currentIndex = 0;
 
-    // Criar os pontos indicadores
     slides.forEach((_, index) => {
       const dot = document.createElement('div');
       dot.classList.add('dot');
@@ -437,7 +521,6 @@
       updateSlider();
     });
 
-    // Atalhos do Teclado (Setas para Esquerda/Direita)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') {
         nextBtn.click();
@@ -447,5 +530,5 @@
     });
   </script>
 </body>
-        </html>
-      
+  </html>
+  
